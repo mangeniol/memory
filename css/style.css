@@ -1,0 +1,111 @@
+html {
+  font-family: 'Domine', serif;
+  text-align: center;
+}
+
+header {
+  background-color: #9165b5;
+  padding: 10px;
+}
+
+div {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+#start {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#start .go {
+  margin: 10px;
+}
+
+#start #partie {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+#famousWall {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#game {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#game #cards {
+  max-width: 840px;
+  padding: 10px;
+}
+
+#game #cards div {
+  background-color: #9165b5;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+
+#progressbar-container {
+  width: 100%;
+}
+
+#progressbar-container #progressbar {
+  background-color: #c9c8d6;
+  height: 10px;
+  width: 50%;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#progressbar-container #progressbar #progressbar-inner {
+  display: block;
+  position: relative;
+  height: 10px;
+  width: 0%;
+  background-color: #9165b5;
+  border-radius: 5px;
+  -webkit-animation: chrono 120s linear;
+          animation: chrono 120s linear;
+}
+
+@-webkit-keyframes chrono {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes chrono {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

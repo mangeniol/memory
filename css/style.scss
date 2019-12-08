@@ -1,0 +1,96 @@
+//Variables utilisées
+$height : 10px;
+$bgcolor : #9165b5;
+$bgcolorlight : rgb(201, 200, 214);
+
+// Partie générale de la page
+html {
+  font-family: 'Domine', serif;
+  text-align:center;
+}
+
+header{
+  background-color: $bgcolor;
+  padding: $height;
+}
+
+div{
+  margin: $height;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+}
+
+// Partie de départ de la page
+#start{
+  justify-content: center;
+
+  .go{
+    margin: $height;
+  }
+
+  #partie{
+    padding: $height;
+    background-color: green;
+    color: white;
+    border: none;
+  }
+}
+
+#famousWall{
+  flex-direction: column;
+}
+
+//Partie concernant la div #game et son contenu concernant les cartes
+#game{
+  flex-direction : column;
+
+  #cards {
+    max-width: 840px;
+    padding : $height;
+
+    div{
+      background-color: $bgcolor;
+      background-repeat: no-repeat;
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+//Partie concernant la barre de progression
+#progressbar-container{
+  width: 100%;
+
+  #progressbar {
+    background-color: $bgcolorlight ;
+    height: $height;
+    width: 50%;
+    margin: $height;
+    border-radius: 5px;
+  
+    #progressbar-inner {
+      display: block;
+      position: relative;
+      height: $height;
+      width: 0%;
+      background-color: $bgcolor;
+      border-radius: 5px;
+      animation: chrono 120s linear ; //C'est ici que l'on peut faire varier le temps du chrono
+    }
+  }
+}
+
+// Animation de la barre de progression
+@keyframes chrono {
+  from {
+    width: 0%; 
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
