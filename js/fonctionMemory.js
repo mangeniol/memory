@@ -48,7 +48,7 @@ jsonTime est un tableau au format json*/
 function showBestTime(jsonTime) {
     bestTime= JSON.parse(jsonTime);
     $("#famousWall").append("<h2>Meilleurs temps réalisés</h2>");
-    for(i=0; i< bestTime.length; i++) {
+    for (var i in bestTime){
         //Affiche le temps en min et sec pour chaque valeur
         bestTimeMs= new Date(bestTime[i]);
         $("#famousWall").append("<span><strong>"+(i+1)+"#</strong>    "+bestTimeMs.getUTCMinutes()+ " min et " +bestTimeMs.getSeconds()+" sec"+"</span>");
@@ -159,22 +159,20 @@ function play(){
                 $(".card").click(play);
             }, 1000);
         }
-        else {
-            //Cas des cartes  identiques
-            //Test si c'est la fin du jeu 
-            if (score<13) {
+        //Cas des cartes  identiques
+        //Test si c'est la fin du jeu 
+        else if (score<13) {
                 //Si ce n'est pas la fin du jeu
                 score =score+1;
                 //Les cartes changent de classes
                 testCard.attr('class', 'found');
                 secondCard.attr('class', 'found');
                 $(".card").click(play);
-            }
-            else {
-                //Si c'est la fin du jeu (toutes les cartes retournées)
-                winGame();
-            } 
         }
+        else {
+            //Si c'est la fin du jeu (toutes les cartes retournées)
+            winGame();
+        } 
     }
 }
 
@@ -216,7 +214,7 @@ Sinon après l'enregistrement du temps.
 La page est rechargée.*/
 function endGame(){
     if (result=='win'){
-    alert("Vous avez gagnééééé! Votre temps est de "+recordTime.getUTCMinutes()+ " min et " +recordTime.getSeconds()+" sec");
+        alert("Vous avez gagnééééé! Votre temps est de "+recordTime.getUTCMinutes()+ " min et " +recordTime.getSeconds()+" sec");
     }
     else{
         alert ('Vous avez perduuuuu!');
